@@ -3,6 +3,8 @@ Python module for MCMC blackbody fits to multi-band photometric measurements of 
 
 Usage : 
 ```
+from bbFit import BBFit
+
 mags = np.array([19,20])
 magerrs = np.array([0.1,0.1])
 wav_names = np.array(['g','r'])
@@ -11,6 +13,7 @@ As = np.array([Ag, Ar])             # Ag, Ar from NED
 zpt = np.array([3631]*len(wavs))    # zeropoint in Jy of the photometric system used (3631 for AB)
 dist = xx                           # cm, Optional, but required if calculating luminosity and not just temperature
 disterr = xx                        # cm Optional
+
 
 bb = BBFit(mags,magerrs,wavs,zpt,dist,disterr=disterr,As=As)
 bb.mag2fnu()
