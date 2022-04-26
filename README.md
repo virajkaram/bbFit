@@ -11,8 +11,8 @@ wav_names = np.array(['g','r'])
 wavs = np.array([0.46,0.66])*1e-4   # wavelength in cm
 As = np.array([Ag, Ar])             # Ag, Ar from NED
 zpt = np.array([3631]*len(wavs))    # zeropoint in Jy of the photometric system used (3631 for AB)
-dist = xx                           # cm, Optional, but required if calculating luminosity and not just temperature
-disterr = xx                        # cm Optional
+dist = 3e18                          # cm, 
+disterr = 0.1*3e18                        # cm 
 
 
 bb = BBFit(mags,magerrs,wavs,zpt,dist,disterr=disterr,As=As)
